@@ -2,15 +2,15 @@
  
 # Overview 
 
-- Techniques          -u
-- Crawl              --forms
-- Enumeration        --data
-- Batch              --headers
-- Risk               --user-agent
-- Level              --cookie
-- Threads            --flush-session
-- Verbosity          --output-dir
-- Proxy              --tamper
+-Techniques     |     -u        
+- Crawl         |     --forms
+- Enumeration   |     --data
+- Batch         |     --headers
+- Risk          |     --user-agent
+- Level         |     --cookie
+- Threads       |     --flush-session
+- Verbosity     |     --output-dir
+- Proxy         |     --tamper
 - SQL Injection Via Burp-Suite
 
 # Techniques 
