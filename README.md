@@ -1,4 +1,4 @@
-# SQLmap-manual
+# SQLmap
  
 # Overview 
 
