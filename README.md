@@ -2,7 +2,7 @@
  
 # Overview 
 
--Techniques     |     -u        
+- Techniques     |     -u        
 - Crawl         |     --forms
 - Enumeration   |     --data
 - Batch         |     --headers
